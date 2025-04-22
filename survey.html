@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Metro Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #004d00;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007a33;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #e0f2e9;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #007a33;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        form {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007a33;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #005f26;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="ccis-logo.png" alt="CCIS Logo" style="height: 80px;">
+    <h1>Riyadh Metro - Student Survey</h1>
+</header>
+
+<nav>
+    <a href="index.html">Welcome</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="signin.html">Sign In</a>
+    <a href="sabic.html">SABIC Station</a>
+</nav>
+
+<div class="container">
+    <form>
+        <label>How often do you use the Riyadh Metro to reach the university?</label>
+        <select>
+            <option>Daily</option>
+            <option>2–3 times per week</option>
+            <option>Rarely</option>
+            <option>Never</option>
+        </select>
+
+        <label>Do you find the SABIC Station convenient for your commute?</label>
+        <select>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <label>Have you used the student metro discount?</label>
+        <select>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <label>Rate your overall satisfaction with the metro service:</label>
+        <select>
+            <option>1 - Poor</option>
+            <option>2</option>
+            <option>3 - Average</option>
+            <option>4</option>
+            <option>5 - Excellent</option>
+        </select>
+
+        <label>Suggestions to improve the student metro experience:</label>
+        <textarea rows="4"></textarea>
+
+        <input type="submit" value="Submit Survey">
+    </form>
+</div>
+
+</body>
+</html>
