@@ -1,20 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome - Riyadh Metro Student Portal</title>
+    <title> The Commuter Students' Way </title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #ffffff;
-            color: #004d00;
+            color: black;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #007a33;
-            color: white;
+            background-color: #ffffff;
+            color: #007a33;
             padding: 15px;
             text-align: center;
         }
@@ -34,13 +33,30 @@
             max-width: 900px;
             margin: auto;
         }
+
+                html, body {
+        height: 100%;
+        margin: 0;
+        }
+
+        .body-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 60vh;
+        }
+
+        .main-content {
+        flex: 1;
+        }
+
     </style>
 </head>
 <body>
 
-<<header>
-    <img src="ccis-logo.png" alt="CCIS Logo" style="height: 80px;">
-    <h1>Welcome to the Riyadh Metro Student Portal</h1>
+<header>
+    <img src="img/ccis-logo.png" alt="CCIS Logo" style="height: 80px;">
+    <img src="img/riyadhBusLogo.png" alt="Riyadh Metro Logo" style="height: 75px;">
+    <h1>Welcome to The Commuter Students' Way</h1>
 </header>
 
 
@@ -58,5 +74,30 @@
     <p>Enjoy exploring the metro system and make your daily commute simpler and more efficient!</p>
 </div>
 
+    <div class="body-wrapper">
+      
+      <div class="main-content">
+        <!-- Your main content goes here -->
+      </div>
+      
+      <footer style="background-color: #f2f2f2; padding: 20px; text-align: center;">
+        <p>
+           Email 📧 us at 
+          <a href="mailto:thecommutersway@sm.imamu.edu.sa" style="color: #0073e6; text-decoration: none;">
+            thecommutersway@sm.imamu.edu.sa
+          </a>
+        </p>
+  
+        <div style="margin-top: 10px;">
+          <a href="https://x.com/riydhtransport" target="_blank" style="margin: 0 10px; color: #1DA1F2;">X</a>
+          <a href="https://facebook.com/riyadhtransport" target="_blank" style="margin: 0 10px; color: #1877F2;">Facebook</a>
+        </div>
+  
+        <p style="margin-top: 15px; font-size: 14px;">&copy; 2025 The Commuter Students' Way. All rights reserved.</p>
+      </footer>
+  
+    </div>
+  
+  
 </body>
 </html>
