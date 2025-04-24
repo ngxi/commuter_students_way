@@ -10,6 +10,9 @@
             color: black;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         header {
             background-color: #ffffff;
@@ -28,26 +31,55 @@
             text-decoration: none;
             font-weight: bold;
         }
+        nav a:hover {
+            text-decoration: underline;
+        }
         .container {
             padding: 20px;
             max-width: 900px;
             margin: auto;
+            flex: 1;
+        }
+        
+        /* Stations Menu Start */
+        .station-maps-menu {
+            width: 100%;
+            background-color: #e0f2e9;
+            padding: 15px 0;
+            text-align: center;
+            border-top: 1px solid #d0d0d0;
+        }
+        .station-maps-menu a {
+            color: #0066cc;
+            margin: 0 15px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .station-maps-menu a:hover {
+            text-decoration: underline;
         }
 
-                html, body {
-        height: 100%;
-        margin: 0;
-        }
+        /* Stations Menu End */
 
-        .body-wrapper {
-        display: flex;
-        flex-direction: column;
-        min-height: 60vh;
+        
+        /* Footer Start */
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
         }
-
-        .main-content {
-        flex: 1;
+        footer a {
+            color: #0073e6;
+            text-decoration: none;
         }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* Footer End */
 
     </style>
 </head>
@@ -58,7 +90,6 @@
     <img src="img/riyadhBusLogo.png" alt="Riyadh Metro Logo" style="height: 75px;">
     <h1>Welcome to The Commuter Students' Way</h1>
 </header>
-
 
 <nav>
     <a href="index.html">Welcome</a>
@@ -74,30 +105,32 @@
     <p>Enjoy exploring the metro system and make your daily commute simpler and more efficient!</p>
 </div>
 
-    <div class="body-wrapper">
-      
-      <div class="main-content">
-        <!-- Your main content goes here -->
-      </div>
-      
-      <footer style="background-color: #f2f2f2; padding: 20px; text-align: center;">
-        <p>
-           Email 📧 us at 
-          <a href="mailto:thecommutersway@sm.imamu.edu.sa" style="color: #0073e6; text-decoration: none;">
-            thecommutersway@sm.imamu.edu.sa
-          </a>
-        </p>
-  
-        <div style="margin-top: 10px;">
-          <a href="https://x.com/riydhtransport" target="_blank" style="margin: 0 10px; color: #1DA1F2;">X</a>
-          <a href="https://facebook.com/riyadhtransport" target="_blank" style="margin: 0 10px; color: #1877F2;">Facebook</a>
-        </div>
-  
-        <p style="margin-top: 15px; font-size: 14px;">&copy; 2025 The Commuter Students' Way. All rights reserved.</p>
-      </footer>
-  
+<!-- Station Maps Menu -->
+<div class="station-maps-menu">
+    <a href="https://www.riyadhbus.sa/en/stationdetails/tags/80001073" target="_blank" style="color: purple;">Al Hamra Station </a>
+    <a href="#station-map-2" target="_blank" >Union Square</a>
+    <a href="#station-map-3" target="_blank" >Grand Terminal</a>
+    <a href="#station-map-4" target="_blank" >Riverside Station</a>
+    <a href="#station-map-5" target="_blank" >Metro Center</a>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>
+       Email 📧 us at 
+      <a href="mailto:thecommutersway@sm.imamu.edu.sa">
+        thecommutersway@sm.imamu.edu.sa
+      </a>
+    </p>
+
+    <div style="margin-top: 10px;">
+      <a href="https://x.com/riydhtransport" target="_blank" style="margin: 0 10px; color: #1DA1F2;">X</a>
+      <a href="https://facebook.com/riyadhtransport" target="_blank" style="margin: 0 10px; color: #1877F2;">Facebook</a>
     </div>
-  
-  
+
+    <p style="margin-top: 15px; font-size: 14px;">&copy; 2025 The Commuter Students' Way. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
+
