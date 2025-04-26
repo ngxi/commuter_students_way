@@ -1,3 +1,6 @@
+
+<!-- New -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,40 +37,149 @@
         nav a:hover {
             text-decoration: underline;
         }
-        .container {
-            padding: 20px;
+        
+        /* Enhanced Welcome Container */
+        .welcome-container {
             max-width: 900px;
-            margin: auto;
+            margin: 0 auto;
+            padding: 30px 20px;
             flex: 1;
-            padding-bottom: 40px; /* Added space below content */
         }
         
-        /* Stations Menu Start */
-        .station-maps-menu {
-            width: 100%;
-            background-color: #e0f2e9;
-            padding: 20px 0; /* Increased padding */
+        .welcome-header {
             text-align: center;
-            border-top: 1px solid #d0d0d0;
-            margin-bottom: 30px; /* Added separation space */
+            margin-bottom: 30px;
         }
-        .station-maps-menu a {
-            color: #0066cc;
-            margin: 0 15px;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-            font-weight: 600;
+        
+        .welcome-header h2 {
+            color: #007a33;
+            font-size: 28px;
+            margin-bottom: 10px;
         }
-        .station-maps-menu a:hover {
-            text-decoration: underline;
+        
+        .header-divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #007a33, #00a651);
+            margin: 0 auto;
         }
-        /* Stations Menu End */
+        
+        .welcome-card {
+            display: flex;
+            align-items: flex-start;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .welcome-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .highlight-card {
+            border-left: 4px solid #007a33;
+        }
+        
+        .welcome-icon {
+            font-size: 28px;
+            margin-right: 20px;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .welcome-text {
+            flex: 1;
+        }
+        
+        .welcome-text p {
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .benefits-list {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
 
-        /* Footer Start */
+        /* Stations Section */
+        .stations-heading {
+            text-align: center;
+            color: #007a33;
+            margin: 30px 0 15px;
+            font-size: 28px;
+            position: relative;
+        }
+        
+        .stations-heading::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #ffd700, #800080);
+            margin: 10px auto 0;
+        }
+        
+        .station-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .station-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            background-color: #f9f9f9;
+        }
+        
+    
+        
+        .station-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .station-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        
+        .station-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .station-card:hover .station-name {
+            color: #007a33;
+        }
+
+        /* Footer */
         footer {
             background-color: #f2f2f2;
-            padding: 25px 20px; /* Increased padding */
+            padding: 25px 20px;
             text-align: center;
             width: 100%;
             border-top: 1px solid #d0d0d0;
@@ -79,8 +191,6 @@
         footer a:hover {
             text-decoration: underline;
         }
-        /* Footer End */
-
     </style>
 </head>
 <body>
@@ -98,19 +208,75 @@
     <a href="sabic.html">SABIC Station</a>
 </nav>
 
-<div class="container">
-    <p>Welcome to the student web portal designed to help you navigate the city and your university using the Riyadh Metro system.</p>
-    <p>The Riyadh Metro is a state-of-the-art transportation network that makes it easier, faster, and more sustainable for students to commute.</p>
-    <p>This platform allows you to sign up, check metro maps, get station information like the closest one to your university (SABIC Station), and benefit from student discounts.</p>
-    <p>Enjoy exploring the metro system and make your daily commute simpler and more efficient!</p>
+<!-- Enhanced Welcome Section -->
+<div class="welcome-container">
+    <div class="welcome-header">
+        <h3><p>Welcome 👋 to Your Gateway for Better Commuting</p></h3>
+        <div class="header-divider"></div>
+    </div>
+
+    <div class="welcome-card" >
+        <div class="welcome-icon">🚆</div>
+        <div class="welcome-text">
+            <p>The Riyadh Metro is revolutionizing city connectivity with its extensive six-line network that seamlessly integrates business districts, residential communities and cultural landmarks. As a state-of-the-art rapid transit system and a key component of the city's public transportation network, the metro is designed to significantly reduce travel time and alleviate congestion.
+
+                It can efficiently transport up to 1.16 million passengers daily (during the introductory phase), offering a reliable and strategic transit solution that enhances the daily commute for both residents and visitors. Built for speed, frequency and capacity, the metro ensures the timely movement of large volumes of commuters.Passengers benefit from real-time schedule displays at each station, providing up-to-date travel information to make every journey smooth and informed.</p>
+        </div>
+    </div>
+    
+    <div class="welcome-card highlight-card">
+        <div class="welcome-icon">🎓</div>
+        <div class="welcome-text">
+            <p>Exclusive student benefits including:</p>
+            <ul class="benefits-list">
+                <li>Special Students Discount</li>
+                <li>Integration With Riyadh Buses</li>
+
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="welcome-card ">
+        <div class="welcome-icon">🏫</div>
+        <div class="welcome-text">
+            <p>The focus will be on SABIC station because it's the nearest station to college</p>
+        </div>
+    </div>
+
+
+    
+    <div class="welcome-card ">
+        <div class="welcome-icon">🌟</div>
+        <div class="welcome-text">
+            <p>Start exploring today and transform your daily commute into a seamless experience!</p>
+        </div>
+    </div>
+
+
 </div>
 
-<!-- Station Maps Menu -->
+<!-- Beautiful Station Cards Section -->
+<h2 class="stations-heading">Major Stations on Yellow & Purple Lines</h2>
 <div class="station-maps-menu">
-    <a href="https://www.riyadhbus.sa/en/stationdetails/tags/80001073" target="_blank">Al Hamra Station </a>
-    <a href="#station-map-2" target="_blank">KAFD Station</a>
-    <a href="#station-map-4" target="_blank">Alrabi Station</a>
-    <a href="#station-map-5" target="_blank">An Nassem Station</a>
+    <div class="station-grid">
+        <a href="https://www.riyadhbus.sa/en/stationdetails/tags/80001073" target="_blank" class="station-card">
+            <span class="station-icon">🚆</span>
+            <span class="station-name">Al Hamra</span>
+        </a>
+        <a href="https://www.riyadhbus.sa/en/stationdetails/tags/80001059" target="_blank" class="station-card">
+            <span class="station-icon">🚆</span>
+            <span class="station-name">KAFD</span>
+        </a>
+        <a href="https://www.riyadhbus.sa/en/stationdetails/tags/80001099" target="_blank" class="station-card ">
+            <span class="station-icon">🚆</span>
+            <span class="station-name">Alrabi</span>
+        </a>
+        <a href="https://www.riyadhbus.sa/en/stationdetails/tags/80001095" target="_blank" class="station-card ">
+            <span class="station-icon">🚆</span>
+            <span class="station-name">An Nassem</span>
+        </a>
+    </div>
 </div>
 
 <!-- Footer -->
