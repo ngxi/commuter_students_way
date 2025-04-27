@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SABIC Station - The Commuter Students' Way</title>
+    <title>SABIC Station - Riyadh Metro</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,13 +11,10 @@
             color: #004d00;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
         header {
-            background-color: #ffffff;
-            color: #007a33;
+            background-color: #007a33;
+            color: white;
             padding: 15px;
             text-align: center;
         }
@@ -32,107 +29,31 @@
             text-decoration: none;
             font-weight: bold;
         }
-        nav a:hover {
-            text-decoration: underline;
-        }
         .container {
             padding: 20px;
             max-width: 900px;
-            margin: 20px auto;
-            flex: 1;
-        }
-        h2 {
-            color: #007a33;
-            margin-top: 30px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .station-maps {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .map-container {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-            position: relative;
+            margin: auto;
         }
         .station-map {
             width: 100%;
             border: 1px solid #ccc;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-        .station-map:hover {
-            transform: scale(1.05);
-        }
-        .hover-text {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 122, 51, 0.7);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            opacity: 0;
-            border-radius: 8px;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        .map-container a:hover .hover-text {
-            opacity: 1;
         }
         .google-map-link {
             display: block;
             margin-top: 15px;
-            text-align: center;
             font-size: 18px;
+            text-align: center;
             color: #007a33;
             text-decoration: underline;
         }
-        table {
-            margin: 20px auto;
-            border-collapse: collapse;
-            width: 80%;
-        }
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-        .back-to-top-button {
-            display: block;
-            margin: 30px auto 0;
-            padding: 10px 20px;
-            background-color: #007a33;
-            color: white;
-            text-align: center;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .back-to-top-button:hover {
-            background-color: #005f26;
-        }
-        footer {
+
+         /* Footer */
+         footer {
             background-color: #f2f2f2;
             padding: 25px 20px;
             text-align: center;
             width: 100%;
             border-top: 1px solid #d0d0d0;
-            margin-top: 30px;
         }
         footer a {
             color: #0073e6;
@@ -141,16 +62,14 @@
         footer a:hover {
             text-decoration: underline;
         }
+        
     </style>
 </head>
 <body>
 
-<a id="top"></a>
-
 <header>
-    <img src="img/ccis-logo.png" alt="CCIS Logo" style="height: 80px;">
-    <img src="img/riyadhBusLogo.png" alt="Riyadh Metro Logo" style="height: 75px;">
-    <h1>Welcome to SABIC Station Guide</h1>
+    <img src="ccis-logo.png" alt="CCIS Logo" style="height: 80px;">
+    <h1>SABIC Station - Riyadh Metro</h1>
 </header>
 
 <nav>
@@ -161,28 +80,19 @@
 </nav>
 
 <div class="container">
+    <p>SABIC Station is the nearest metro station to Imam Mohammad Ibn Saud Islamic University. It is the most convenient option for students commuting via the Riyadh Metro.</p>
 
-    <!-- Internal Quick Links -->
-    <nav style="margin-top: 20px; text-align: center;">
-        <a href="#reach">How to Reach</a> | 
-        <a href="#discounts">Discounts</a> | 
-        <a href="#visuals">Station Maps</a> | 
-        <a href="#funfacts">Fun Facts</a>
-    </nav>
-
-    <h2 id="reach">How to Reach SABIC Station:</h2>
+    <h2>How to Reach</h2>
     <ul>
-        <li>Accessible via the Yellow Line (Line 4) and the Purple Line (Line 6).</li>
-        <li>Located on Uthman Bin Affan Road.</li>
-        <li>Close to King Khalid International Airport and King Abdullah Financial District.</li>
-        <li><strong>Opening Time:</strong> 6:00 AM <strong>Closing Time:</strong> 12:00 AM (Midnight)</li>
-        
+        <li>Accessible via the Yellow Line (Line 4) and the Purple Line (Line 6)</li>
+        <li>Located on Uthman Bin Affan Road</li>
+        <li>Close to King Khalid International Airport and King Abdullah Financial District</li>
     </ul>
 
-    <h2 id="discounts">Student Discounts and Tickets:</h2>
+    <h2>Discounts and Tickets</h2>
     <ul>
-        <li>Students receive a <strong>50% discount</strong> with a valid University ID card.</li>
-        <li>Ticket Options:
+        <li>Students receive a 50% discount with university ID</li>
+        <li>Ticket options:
             <ul>
                 <li>2-hour pass: SAR 4</li>
                 <li>3-day pass: SAR 20</li>
@@ -192,50 +102,35 @@
         </li>
     </ul>
 
-    
-
-    <h2 id="visuals">Station Maps:</h2>
-    <div class="station-maps">
-        <div class="map-container">
-            <h3>SABIC Station Map</h3>
-            <img src="https://www.riyadhbus.sa/documents/20124/277398/SABIC.png/04ad82d7-8365-69c2-b13f-28e59f59097f?t=1732750754201" alt="SABIC Station Map" class="station-map">
-        </div>
-        <div class="map-container">
-            <h3>Riyadh Metro Full Map</h3>
-            <a href="http://www.inat.fr/files/riyadh-metro-bus-public-transport-map.png" target="_blank">
-                <img src="img/RiyadhMetromap.png" alt="Riyadh Metro Full Map" class="station-map">
-                <div class="hover-text">Click to View PDF Map</div>
-            </a>
-        </div>
-    </div>
-
-    <a class="google-map-link" href="https://g.co/kgs/YzJG7M4" target="_blank">View SABIC Station on Google Maps</a>
-
-    <h2 id="funfacts">Did You Know?</h2>
+    <h2>Metro Line Maps</h2>
     <ul>
-        <li>Riyadh Metro will have 85 stations when fully operational!</li>
-        <li>It will cover around 176 kilometers across Riyadh city.</li>
-        <li>SABIC Station is especially important for Imam University students.</li>
+        <li>Yellow Line: Connects King Khalid International Airport to King Abdullah Financial District</li>
+        <li>Purple Line: Runs from An Naseem to KAFD via Imam Mohammad Ibn Saud University</li>
+        <li><a href="https://www.riyadhbus.sa/en/metro" target="_blank">Full Network Map</a></li>
     </ul>
 
-    <!-- Back to Top Button -->
-    <a href="#top" class="back-to-top-button">⬆️ Back to Top</a>
-
+    <h2>Visuals</h2>
+    <img src="https://www.riyadhbus.sa/documents/20124/277398/SABIC.png/04ad82d7-8365-69c2-b13f-28e59f59097f?t=1732750754201"
+         alt="SABIC Station Map" class="station-map">
+    <a class="google-map-link" href="https://g.co/kgs/YzJG7M4" target="_blank">View SABIC Station on Google Maps</a>
 </div>
 
 <footer>
-    <p>Email us at 
-        <a href="mailto:thecommutersway@sm.imamu.edu.sa">thecommutersway@sm.imamu.edu.sa</a>
+    <p>
+       Email 📧 us at 
+      <a href="mailto:thecommutersway@sm.imamu.edu.sa">
+        thecommutersway@sm.imamu.edu.sa
+      </a>
     </p>
 
     <div style="margin-top: 10px;">
-        <a href="https://x.com/riydhtransport" target="_blank" style="margin: 0 10px; color: #1DA1F2;">X</a>
-        <a href="https://facebook.com/riyadhtransport" target="_blank" style="margin: 0 10px; color: #1877F2;">Facebook</a>
+      <a href="https://x.com/riydhtransport" target="_blank" style="margin: 0 10px; color: #1DA1F2;">X</a>
+      <a href="https://facebook.com/riyadhtransport" target="_blank" style="margin: 0 10px; color: #1877F2;">Facebook</a>
     </div>
 
     <p style="margin-top: 15px; font-size: 14px;">&copy; 2025 The Commuter Students' Way. All rights reserved.</p>
 </footer>
 
+
 </body>
 </html>
-
