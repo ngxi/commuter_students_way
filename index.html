@@ -334,7 +334,6 @@
             <h3>Resources</h3>
             <a href="https://rpt.sa/documents/20124/285763/riyadhmetro.pdf/333a0dec-de0f-7a99-f553-ee03be0bd35a?t=1732900812075" target="_blank" >Metro Map</a>
             <a href="sabic.html">Student Discount Info</a>
-            <a href="#">FAQs</a>
         </div>
         
         <div class="footer-column">
@@ -350,12 +349,48 @@
         </div>
     </div>
     
+    <p>Last updated: <span id="last-updated"></span></p>
+
     <div class="copyright">
         <p>&copy; 2025 The Commuter Students' Way. All rights reserved.</p>
     </div>
+
 </footer>
 
 <!-- Footer End -->
+
+
+
+<!-- Last Updated Date -->
+ 
+<script>
+
+    //  Last Updated Date 
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const updateDate = new Date(document.lastModified);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('last-updated').textContent = updateDate.toLocaleDateString('en-UK', options);
+    });
+
+    // Station Cards Hover Effect
+
+       document.querySelectorAll('.station-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+        });
+    });
+
+    
+
+
+</script>
 
 
 </body>
