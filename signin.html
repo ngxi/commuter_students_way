@@ -6,7 +6,6 @@
     <title>Sign In - Riyadh Metro Student Portal</title>
     <link rel="stylesheet" href="style.css">
     <style>
-
         .container {
             padding: 20px;
             max-width: 600px;
@@ -41,13 +40,41 @@
         input[type="submit"]:hover {
             background-color: #005f26;
         }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
     </style>
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorDiv = document.getElementById('error-message');
+            let errorMsg = '';
+
+            if (!username && !password) {
+                errorMsg = 'Please enter username and password.';
+            } else if (!username) {
+                errorMsg = 'Username is required.';
+            } else if (!password) {
+                errorMsg = 'Password is required.';
+            }
+
+            if (errorMsg) {
+                errorDiv.textContent = errorMsg;
+                return false; // Stop form submission
+            } else {
+                errorDiv.textContent = ''; // Clear previous errors
+                return true; // Allow form submission
+            }
+        }
+    </script>
 </head>
 <body>
 
 <header>
     <img src="img/ccis-logo.png" alt="CCIS Logo" style="height: 80px;">
-    <h1>Sign In - The commuter Students' Way</h1>
+    <h1>Sign In - The Commuter Students' Way</h1>
 </header>
 
 <nav>
@@ -58,16 +85,17 @@
 </nav>
 
 <div class="container">
- <form action="survey.html">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username">
+    <form action="survey.html" onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
 
-    <input type="submit" value="Sign In">
-</form>
+        <input type="submit" value="Sign In">
 
+        <div id="error-message" class="error"></div>
+    </form>
 </div>
 
 </body>
