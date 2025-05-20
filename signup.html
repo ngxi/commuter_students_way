@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up - Riyadh Metro Student Portal</title>
+    <title>Sign Up - Metro Student Portal</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,12 +44,15 @@
             margin-top: 10px;
             font-weight: bold;
         }
-        input[type="text"],
-        input[type="date"] {
+        input[type="text"], input[type="date"] {
             width: 100%;
             padding: 8px;
             margin-top: 5px;
             box-sizing: border-box;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
         }
         input[type="submit"] {
             margin-top: 15px;
@@ -60,15 +63,47 @@
             cursor: pointer;
             border-radius: 4px;
         }
-        input[type="submit"]:hover {
-            background-color: #005f26;
-        }
     </style>
+    <script>
+        function validateForm() {
+            var name = document.forms["signupForm"]["name"].value;
+            var dob = document.forms["signupForm"]["dob"].value;
+            var semester = document.forms["signupForm"]["semester"].value;
+            var college = document.forms["signupForm"]["college"].value;
+            var address = document.forms["signupForm"]["address"].value;
+            var errors = [];
+
+            if (!name || !dob || !semester || !college || !address) {
+                errors.push("All fields are required.");
+            }
+
+            if (/\d/.test(name)) {
+                errors.push("Name must not contain numbers.");
+            }
+
+            var today = new Date().toISOString().split("T")[0];
+            if (dob > today) {
+                errors.push("Date of Birth cannot be in the future.");
+            }
+
+            var errorDiv = document.getElementById("errorMessages");
+            errorDiv.innerHTML = "";
+            if (errors.length > 0) {
+                errors.forEach(function(error) {
+                    var p = document.createElement("p");
+                    p.className = "error";
+                    p.textContent = error;
+                    errorDiv.appendChild(p);
+                });
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
 
 <header>
-    <img src="ccis-logo.png" alt="CCIS Logo" style="height: 80px;">
     <h1>Sign Up - Student Registration</h1>
 </header>
 
@@ -80,25 +115,26 @@
 </nav>
 
 <div class="container">
- <form action="survey.html">
-       <label for="name">Name:</label>
-       <input type="text" id="name" name="name">
+    <form name="signupForm" method="post" action="save.php" onsubmit="return validateForm();">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
 
-       <label for="dob">Date of Birth:</label>
-       <input type="date" id="dob" name="dob">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
 
-       <label for="semester">Semester:</label>
-       <input type="text" id="semester" name="semester">
+        <label for="semester">Semester:</label>
+        <input type="text" id="semester" name="semester">
 
-       <label for="college">College:</label>
-       <input type="text" id="college" name="college">
+        <label for="college">College:</label>
+        <input type="text" id="college" name="college">
 
-       <label for="address">Address Area:</label>
-       <input type="text" id="address" name="address">
+        <label for="address">Address Area:</label>
+        <input type="text" id="address" name="address">
 
-       <input type="submit" value="Register">
-   </form>
+        <div id="errorMessages"></div>
 
+        <input type="submit" value="Register">
+    </form>
 </div>
 
 </body>
