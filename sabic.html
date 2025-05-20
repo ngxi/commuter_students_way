@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SABIC Station - The Commuter Students' Way</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            flex: 1;
+        }
+        h2 {
+            color: #007a33;
+            margin-top: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .station-maps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            position: relative;
+        }
+        .station-map {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .station-map:hover {
+            transform: scale(1.05);
+        }
+        .hover-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 122, 51, 0.7);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0;
+            border-radius: 8px;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .map-container a:hover .hover-text {
+            opacity: 1;
+        }
+        .google-map-link {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 18px;
+            color: #007a33;
+            text-decoration: underline;
+        }
+
+        /* Tickets Section Start */
+
+        .ticket-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .ticket-table th, 
+        .ticket-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ticket-table th {
+            background-color: #007a33;
+            color: white;
+            font-weight: 500;
+        }
+
+        .ticket-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .ticket-table tr:hover {
+            background-color: rgba(0, 122, 51, 0.05);
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #007a33;
+        }
+
+        /* Responsive adjustments for tickets table */
+        @media (max-width: 768px) {
+            .ticket-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .ticket-table th, 
+            .ticket-table td {
+                padding: 0.8rem;
+            }
+        }
+
+        /* Tickets Section End */
+
+
+     /* Footer Start */
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #bbb;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #444;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+         .footer-column .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Footer End */
+    </style>
+</head>
+<body>
+
+<a id="top"></a>
+
+<header>
+    <img src="img/ccis-logo.png" alt="CCIS Logo" style="height: 80px;">
+    <img src="img/riyadhBusLogo.png" alt="Riyadh Metro Logo" style="height: 75px;">
+    <h1>Welcome to SABIC Station Guide</h1>
+</header>
+
+<nav>
+    <a href="index.html">Welcome</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="signin.html">Sign In</a>
+</nav>
+
+<div class="container">
+
+    <!-- Internal Quick Links -->
+    <nav style="margin-top: 20px; text-align: center;">
+        <a href="#reach">How to Reach</a> | 
+        <a href="#discounts">Discounts</a> | 
+        <a href="#visuals">Station Maps</a> | 
+        <a href="#funfacts">Fun Facts</a>
+    </nav>
+
+    <h2 id="reach">How to Reach SABIC Station:</h2>
+    <ul>
+        <li>Accessible via the Yellow Line (Line 4) and the Purple Line (Line 6).</li>
+        <li>Located on Mohammed bin Salman Road.</li>
+        <li>Close to King Khalid International Airport and King Abdullah Financial District.</li>
+        <li><strong>Opening Time:</strong> 6:00 AM <strong>Closing Time:</strong> 12:00 AM (Midnight)</li>
+        
+    </ul>
+
+    <h2 id="discounts">Student Discounts and Tickets:</h2>
+    <p>Students receive a <span class="highlight">50% discount</span> on all tickets with a valid University ID card.</p>
+    
+    <table class="ticket-table">
+        <thead>
+            <tr>
+                <th>Ticket Type</th>
+                <th>Regular Price</th>
+                <th>Student Price</th>
+                <th>Best For</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2-hour pass</td>
+                <td>SAR 4</td>
+                <td>SAR 2</td>
+                <td>Short trips</td>
+            </tr>
+            <tr>
+                <td>3-day pass</td>
+                <td>SAR 20</td>
+                <td>SAR 10</td>
+                <td>Weekend use</td>
+            </tr>
+            <tr>
+                <td>7-day pass</td>
+                <td>SAR 40</td>
+                <td>SAR 20</td>
+                <td>Weekly commute</td>
+            </tr>
+            <tr>
+                <td>30-day pass</td>
+                <td>SAR 140</td>
+                <td>SAR 70</td>
+                <td>Monthly savings</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <hr>
+    <h2 id="visuals">Station Maps:</h2>
+    <div class="station-maps">
+        <div class="map-container">
+            <h3>SABIC Station Map</h3>
+            <img src="https://www.rpt.sa/documents/20124/277398/SABIC.png/04ad82d7-8365-69c2-b13f-28e59f59097f?t=1732750754201" alt="SABIC Station Map" class="station-map">
+        </div>
+        <div class="map-container">
+            <h3>Riyadh Metro Full Map</h3>
+            <a href="http://www.inat.fr/files/riyadh-metro-bus-public-transport-map.png" target="_blank">
+                <img src="img/RiyadhMetromap.png" alt="Riyadh Metro Full Map" class="station-map">
+                <div class="hover-text">Click to View PDF Map</div>
+            </a>
+        </div>
+    </div>
+
+    <a class="google-map-link" href="https://g.co/kgs/YzJG7M4" target="_blank">View SABIC Station on Google Maps</a>
+
+    <h2 id="funfacts">Did You Know?</h2>
+    <ul>
+        <li>Riyadh Metro will have 85 stations when fully operational!</li>
+        <li>It will cover around 176 kilometers across Riyadh city.</li>
+        <li>SABIC Station is especially important for Imam University male students.</li>
+    </ul>
+
+
+
+</div>
+
+
+<!-- Footer Start -->
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="signup.html">Student Registration</a>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Resources</h3>
+            <a href="https://rpt.sa/documents/20124/285763/riyadhmetro.pdf/333a0dec-de0f-7a99-f553-ee03be0bd35a?t=1732900812075" target="_blank" >Metro Map</a>
+            <a href="sabic.html">Student Discount Info</a>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-envelope"></i> thecommutersway@sm.imamu.edu.sa</p>
+            <p><i class="fas fa-phone"></i> +966 55 345 6789</p>
+            <p><i class="fas fa-map-marker-alt"></i> CCIS Building, Imam Mohammad Ibn Saud Islamic University</p>
+            <div class="social-links">
+                <a href="https://x.com/riyadhtransport" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://facebook.com/riyadhtransport" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/riyadhtransport" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>&copy; 2025 The Commuter Students' Way. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Footer End -->
+
+
+  <script>
+
+    // Add smooth scrolling to all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,48 +1,244 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome - Riyadh Metro Student Portal</title>
+    <title> The Commuter Students' Way </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #004d00;
-            margin: 0;
-            padding: 0;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        header {
-            background-color: #007a33;
-            color: white;
-            padding: 15px;
-            text-align: center;
+
+        nav a:hover {
+            text-decoration: underline;
         }
-        nav {
-            background-color: #e0f2e9;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #007a33;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .container {
-            padding: 20px;
+        
+        /* Enhanced Welcome Container */
+        .welcome-container {
             max-width: 900px;
-            margin: auto;
+            margin: 0 auto;
+            padding: 30px 20px;
+            flex: 1;
         }
+        
+        .welcome-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .welcome-header h2 {
+            color: #007a33;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header-divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #007a33, #00a651);
+            margin: 0 auto;
+        }
+        
+        .welcome-card {
+            display: flex;
+            align-items: flex-start;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .welcome-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .highlight-card {
+            border-left: 4px solid #007a33;
+        }
+        
+        .welcome-icon {
+            font-size: 28px;
+            margin-right: 20px;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .welcome-text {
+            flex: 1;
+        }
+        
+        .welcome-text p {
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .benefits-list {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        /* Stations Section */
+        .stations-heading {
+            text-align: center;
+            color: #007a33;
+            margin: 30px 0 15px;
+            font-size: 28px;
+            position: relative;
+        }
+        
+        .stations-heading::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #ffd700, #800080);
+            margin: 10px auto 0;
+        }
+        
+        .station-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .station-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            background-color: #f9f9f9;
+        }
+        
+    
+        
+        .station-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .station-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        
+        .station-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .station-card:hover .station-name {
+            color: #007a33;
+        }
+
+        /* Footer Start */
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #bbb;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #444;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+         .footer-column .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Footer End */
+        
+    
+
     </style>
 </head>
 <body>
 
-<<header>
-    <img src="ccis-logo.png" alt="CCIS Logo" style="height: 80px;">
-    <h1>Welcome to the Riyadh Metro Student Portal</h1>
+<header>
+    <img src="img/ccis-logo.png" alt="CCIS Logo" style="height: 80px;">
+    <img src="img/riyadhBusLogo.png" alt="Riyadh Metro Logo" style="height: 75px;">
+    <h1>Welcome to The Commuter Students' Way</h1>
 </header>
-
 
 <nav>
     <a href="index.html">Welcome</a>
@@ -51,12 +247,151 @@
     <a href="sabic.html">SABIC Station</a>
 </nav>
 
-<div class="container">
-    <p>Welcome to the student web portal designed to help you navigate the city and your university using the Riyadh Metro system.</p>
-    <p>The Riyadh Metro is a state-of-the-art transportation network that makes it easier, faster, and more sustainable for students to commute.</p>
-    <p>This platform allows you to sign up, check metro maps, get station information like the closest one to your university (SABIC Station), and benefit from student discounts.</p>
-    <p>Enjoy exploring the metro system and make your daily commute simpler and more efficient!</p>
+<!-- Enhanced Welcome Section -->
+<div class="welcome-container">
+    <div class="welcome-header">
+        <h3><p>Welcome 👋 to Your Gateway for Better Commuting</p></h3>
+        <div class="header-divider"></div>
+    </div>
+
+    <div class="welcome-card" >
+        <div class="welcome-icon">🚆</div>
+        <div class="welcome-text">
+            <p>The Riyadh Metro is revolutionizing city connectivity with its extensive six-line network that seamlessly integrates business districts, residential communities and cultural landmarks. As a state-of-the-art rapid transit system and a key component of the city's public transportation network, the metro is designed to significantly reduce travel time and alleviate congestion.
+
+                It can efficiently transport up to 1.16 million passengers daily (during the introductory phase), offering a reliable and strategic transit solution that enhances the daily commute for both residents and visitors. Built for speed, frequency and capacity, the metro ensures the timely movement of large volumes of commuters.Passengers benefit from real-time schedule displays at each station, providing up-to-date travel information to make every journey smooth and informed.</p>
+        </div>
+    </div>
+    
+    <div class="welcome-card highlight-card">
+        <div class="welcome-icon">🎓</div>
+        <div class="welcome-text">
+            <p>Exclusive student benefits including:</p>
+            <ul class="benefits-list">
+                <li>Special Students Discount</li>
+                <li>Integration With Riyadh Buses</li>
+
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="welcome-card ">
+        <div class="welcome-icon">🏫</div>
+        <div class="welcome-text">
+            <p>The focus will be on SABIC station because it's the nearest station to college</p>
+        </div>
+    </div>
+
+
+    
+    <div class="welcome-card ">
+        <div class="welcome-icon">🌟</div>
+        <div class="welcome-text">
+            <p>Start exploring today and transform your daily commute into a seamless experience!</p>
+        </div>
+    </div>
+
+
 </div>
+
+<!-- Beautiful Station Cards Section -->
+<h2 class="stations-heading">Major Stations on Yellow & Purple Lines</h2>
+<div class="station-maps-menu">
+    <div class="station-grid">
+        <a href="https://www.rpt.sa/en/stationdetails/tags/80001073" target="_blank" class="station-card">
+            <span class="station-icon">🚆</span>
+            <span class="station-name">Al Hamra</span>
+        </a>
+        <a href="https://www.rpt.sa/en/stationdetails/tags/80001059" target="_blank" class="station-card">
+            <span class="station-icon">🚆</span>
+            <span class="station-name">KAFD</span>
+        </a>
+        <a href="https://www.rpt.sa/en/stationdetails/tags/80001099" target="_blank" class="station-card ">
+            <span class="station-icon">🚆</span>
+            <span class="station-name">Alrabi</span>
+        </a>
+        <a href="https://www.rpt.sa/en/stationdetails/tags/80001095" target="_blank" class="station-card ">
+            <span class="station-icon">🚆</span>
+            <span class="station-name">An Nassem</span>
+        </a>
+    </div>
+</div>
+
+
+<!-- Footer Start -->
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="signup.html">Student Registration</a>
+            <a href="sabic.html">Sabic Station</a>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Resources</h3>
+            <a href="https://rpt.sa/documents/20124/285763/riyadhmetro.pdf/333a0dec-de0f-7a99-f553-ee03be0bd35a?t=1732900812075" target="_blank" >Metro Map</a>
+            <a href="sabic.html">Student Discount Info</a>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-envelope"></i> thecommutersway@sm.imamu.edu.sa</p>
+            <p><i class="fas fa-phone"></i> +966 55 345 6789</p>
+            <p><i class="fas fa-map-marker-alt"></i> CCIS Building, Imam Mohammad Ibn Saud Islamic University</p>
+            <div class="social-links">
+                <a href="https://x.com/riyadhtransport" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://facebook.com/riyadhtransport" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/riyadhtransport" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <p>Last updated: <span id="last-updated" style="text-align: center;"></span></p>
+
+    <div class="copyright">
+        <p>&copy; 2025 The Commuter Students' Way. All rights reserved.</p>
+    </div>
+
+</footer>
+
+<!-- Footer End -->
+
+
+
+<!-- Last Updated Date -->
+ 
+<script>
+
+    //  Last Updated Date 
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const updateDate = new Date(document.lastModified);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('last-updated').textContent = updateDate.toLocaleDateString('en-UK', options);
+    });
+
+    // Station Cards Hover Effect
+
+       document.querySelectorAll('.station-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+        });
+    });
+
+    
+
+
+</script>
+
 
 </body>
 </html>
