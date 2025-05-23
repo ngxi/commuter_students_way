@@ -3,65 +3,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up - Metro Student Portal</title>
+    <title>Student Registration - The Commuter Students' Way</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #004d00;
-            margin: 0;
-            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        header {
-            background-color: #007a33;
-            color: white;
-            padding: 15px;
-            text-align: center;
+        nav a:hover {
+            text-decoration: underline;
         }
-        nav {
-            background-color: #e0f2e9;
-            padding: 10px;
-            text-align: center;
+        .form-container {
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        nav a {
-            margin: 0 15px;
+        h2 {
             color: #007a33;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .container {
-            padding: 20px;
-            max-width: 600px;
-            margin: auto;
-        }
-        form {
-            background-color: #f2f2f2;
-            padding: 20px;
-            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
         }
         label {
             display: block;
-            margin-top: 10px;
+            margin: 0.5rem 0 0.2rem;
             font-weight: bold;
+            color: #333;
         }
         input[type="text"], input[type="date"] {
             width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            box-sizing: border-box;
-        }
-        .error {
-            color: red;
-            font-size: 0.9em;
+            padding: 0.6rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 1rem;
         }
         input[type="submit"] {
-            margin-top: 15px;
-            padding: 10px 20px;
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
             background-color: #007a33;
             color: white;
             border: none;
+            border-radius: 6px;
             cursor: pointer;
-            border-radius: 4px;
+            font-size: 1rem;
+        }
+        input[type="submit"]:hover {
+            background-color: #005f26;
+        }
+        .error {
+            color: red;
+            font-size: 0.9rem;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
         }
     </style>
     <script>
@@ -104,7 +108,9 @@
 <body>
 
 <header>
-    <h1>Sign Up - Student Registration</h1>
+    <img src="img/ccis-logo.png" alt="CCIS Logo" style="height: 80px;">
+    <img src="img/riyadhBusLogo.png" alt="Riyadh Metro Logo" style="height: 75px;">
+    <h1>Student Registration</h1>
 </header>
 
 <nav>
@@ -114,7 +120,8 @@
     <a href="sabic.html">SABIC Station</a>
 </nav>
 
-<div class="container">
+<div class="form-container">
+    <h2>Sign Up</h2>
     <form name="signupForm" method="post" action="save.php" onsubmit="return validateForm();">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name">
@@ -136,6 +143,10 @@
         <input type="submit" value="Register">
     </form>
 </div>
+
+<footer>
+    <p>&copy; 2025 The Commuter Students' Way. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
